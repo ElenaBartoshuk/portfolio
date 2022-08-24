@@ -60,23 +60,24 @@ h2 {
 }
 
 .title {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 500;
-  width: 23%;
+  text-transform: uppercase;
+  width: 25%;
   margin: 0 auto;
   margin-top: 50px;
-  margin-bottom: 30px;
-  line-height: 45px;
-  background-color: #fe3e57;
-  color: white;
-  padding: 8px 0;
-  border-radius: 30px;
+  margin-bottom: 50px;
+  line-height: 1;
+  background-color: rgba(254, 62, 87, 0.12);
+  color: var(--accent-color);
+  padding: 17px;
+  border-radius: 50px;
   display: block;
 }
 
 h3 {
   color: var(--default-color);
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 p {
@@ -159,6 +160,7 @@ a.contacts {
   color: white;
   background-color: var(--accent-color);
 }
+
 a.contacts:hover {
   border: var(--border);
   color: var(--accent-color);
@@ -282,6 +284,11 @@ a.about:hover {
   margin: 10px auto 15px;
 }
 
+.projects__btns {
+  display: flex;
+  justify-content: center;
+}
+
 .projects__btn {
   text-transform: uppercase;
   cursor: pointer;
@@ -300,22 +307,98 @@ a.about:hover {
   background-color: white;
 }
 
-.email {
-  display: flex;
-  justify-content: center;
+.projects__btn--live {
   color: var(--accent-color);
+  background-color: white;
+  border: var(--border);
+}
+
+.projects__btn--live:hover {
+  color: white;
+  background-color: var(--accent-color);
+}
+
+.gallery {
+  padding: 50px 0;
+}
+
+.gallery__buttons {
   margin-bottom: 30px;
+}
+
+.gallery__btn {
+  margin: 0 13px;
+  background-color: transparent;
+  border: 1px solid rgba(146, 146, 146, 0.5);
+  border-radius: 40px;
+  padding: 6px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.gallery__btn.mixitup-control-active {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.gallery__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 25px;
+}
+
+.gallery__item:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery__images {
+  object-fit: cover;
+  width: 100%;
+  max-height: 1150px;
+  height: 100%;
+  border-radius: 5px;
+  border: 5px solid #fff;
+  box-shadow: 2px 7px 20px 0px rgb(141 141 141 / 50%);
+}
+
+.gallery__add {
+  display: block;
+  align-self: center;
+  padding: 20px 5px;
+  margin: 50px auto 30px;
+  cursor: pointer;
+  width: 180px;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 4px;
+  border: var(--border);
+  box-shadow: 0px 7px 20px 0px rgb(255 17 48 / 30%);
+  transition: all 0.5s;
+  border: none;
+  text-decoration: none;
+}
+
+.gallery__add:hover {
+  border: var(--border);
+  color: var(--accent-color);
+  background-color: white;
+}
+
+.certificates {
+  margin-top: 20px;
 }
 
 .about-text {
   display: flex;
-}
-
-.back {
-  display: flex;
-  justify-content: center;
-  color: var(--accent-color);
-  margin-top: 30px;
 }
 
 .collection {
@@ -527,6 +610,7 @@ a.about:hover {
 
 footer {
   margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 .social-links {
@@ -587,6 +671,15 @@ footer {
 
 .source__code-img:hover path {
   fill: black;
+}
+
+.copy {
+  text-align: center;
+  font-size: 12px;
+  color: var(--default-color);
+}
+.copy span {
+  font-weight: 500;
 }
 
 @media (max-width: 1100px) {
