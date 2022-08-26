@@ -14,6 +14,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="src/magnific-popup.css">
+  <link href="src/slick.css" rel="stylesheet">
+
   <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="src/styles.css" />
   <title>Elena Bartoshuk - Contacts page</title>
@@ -51,6 +54,7 @@
             </li>
           </ul>
         </div>
+        <button class="btn header__btn" title="Request">Request a callback</button>
       </div>
     </nav>
   </header>
@@ -65,32 +69,34 @@
         </li>
       </ul>
     </div>
-    <h2 class="title">
-      Contact me
-    </h2>
-    <h3>Let's get in touch!</h3>
+    <div class="greetings">
+      <h2 class="title">
+        Contact me
+      </h2>
+      <h3>Let's get in touch!</h3>
+    </div>
     <section class="contact">
       <div class="contact__inner">
-
         <form class="contact__form" action="#">
           <div class="contact__form-box">
             <input class="contact__form-input" type="text" placeholder="Your Name">
-            <input class="contact__form-input" type="text" placeholder="Your E-mail">
+            <input class="contact__form-input" type="tel" id="phone" placeholder="Your phone">
           </div>
+          <input class="contact__form-input" type="text" placeholder="Your E-mail">
           <input class="contact__form-input" type="text" placeholder="Subject">
           <textarea class="contact__form-textarea" placeholder="Message"></textarea>
-          <button class="contact__form-btn" type="submit">Send message</button>
+          <button class="btn contact__form-btn" type="submit" title="Send me a message">Send message</button>
         </form>
         <div class="contact__info">
           <ul class="contact__info-list">
             <li class="contact__info-item">Phone:
-              <a class="contact__info-phone" href="tel:+380952942642">+38-095-294-26-42</a>
+              <a class="contact__info-phone" href="tel:+380952942642" title="Call me">+38-095-294-26-42</a>
             </li>
             <li class="contact__info-item contact__info-item--telegram">Telegram:
-              <a href="https://t.me/elena_bartoshuk" target="_blank">@elena_bartoshuk</a>
+              <a href="https://t.me/elena_bartoshuk" target="_blank" title="Contact me on Telegram">@elena_bartoshuk</a>
             </li>
-            <li class="contact__info-item contact__info-item--email">Email:
-              <a href="mailto:lena.bartoshuk@gmail.com">lena.bartoshuk@gmail.com</a>
+            <li class="contact__info-item contact__info-item--email">E-mail:
+              <a href="mailto:lena.bartoshuk@gmail.com" title="Send me an E-mail">lena.bartoshuk@gmail.com</a>
             </li>
           </ul>
         </div>
@@ -121,7 +127,7 @@
               d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
           </svg>
         </a>
-        <a class="social-links__link" href="mailto:lena.bartoshuk@gmail.com" title="Send me an Email">
+        <a class="social-links__link" href="mailto:lena.bartoshuk@gmail.com" title="Send me an E-mail">
           <svg class="social-links__img" width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
             clip-rule="evenodd">
             <path
@@ -139,8 +145,39 @@
       </div>
       <div class="copy"><span>© Copyright Elena Bartoshuk</span>, 2022, All Rights Reserved</div>
     </footer>
+    <div class="overlay">
+      <div class="overlay__popup">
+        <img class="overlay__close" src="images/close.svg" alt="">
+        <div class="overlay__block">
+          <h3 class="overlay__title">Request a Callback</h3>
+          <p class="overlay__subtitle">Enter your details to receive a callback from me</p>
+          <form class="form" action="">
+            <label class="form__label">
+              <input class="form__input" placeholder="Your name" type="text">
+            </label>
+            <label class="form__label">
+              <input class="form__input" placeholder="Your phone" type="tel" id="phone">
+            </label>
+            <label class="form__label">
+              <input class="form__input" placeholder="Your E-mail" type="email">
+            </label>
+            <button class="btn callback__button">Send request</button>
+          </form>
+        </div>
+        <div class="overlay__thanks">
+          <h3 class="overlay__title">Thanks for your request!</h3>
+          <p class="overlay__subtitle">I'll call you in 2 hours</p>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="src/mixitup.min.js"></script>
+  <script src="src/jquery.magnific-popup.min.js"></script>
+  <script src="src/slick.min.js"></script>
+  <script src="src/three.r119.min.js"></script>
+  <script src="src/vanta.birds.min.js"></script>
+  <script src="src/vanta.net.min.js"></script>
   <script src="src/main.js"></script>
 </body>
 
