@@ -772,6 +772,24 @@ footer {
   cursor: pointer;
 }
 
+#error-msg,
+#valid-msg {
+  font-size: 14px;
+  display: block;
+  text-align: left;
+  margin-left: 60px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+#error-msg {
+  color: #ea4335;
+}
+
+#valid-msg {
+  color: #34a853;
+}
+
 .iti__flag {
   background-image: url("../images/flags.png");
 }
