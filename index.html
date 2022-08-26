@@ -224,18 +224,19 @@
           <p class="overlay__subtitle">Enter your details to receive a callback from me</p>
           <form class="form popup__form" action="">
             <label class="form__label">
-              <input class="form__input" placeholder="Your name" type="text">
+              <input class="form__input" placeholder="Your name" type="text" minlength="2" maxlength="13" required>
             </label>
 
             <label class="form__label">
-              <input class="form__input" placeholder="Your phone" type="tel" id="phone">
+              <input class="form__input" placeholder="Your phone (+ and number)" type="tel" id="phone" required>
               <span id="valid-msg" class="hide">✓ Valid</span>
               <span id="error-msg" class="hide"></span>
             </label>
 
             <label class="form__label">
-              <input class="form__input" placeholder="Your E-mail" type="email">
+              <input class="form__input" placeholder="Best time to call" type="text">
             </label>
+
             <button class="btn callback__button">Send request</button>
           </form>
         </div>
@@ -253,7 +254,6 @@
   <script src="src/slick.min.js"></script>
   <script src="src/three.r119.min.js"></script>
   <script src="src/vanta.birds.min.js"></script>
-  <script src="src/vanta.net.min.js"></script>
   <script src="src/main.js"></script>
 </body>
 
