@@ -71,6 +71,7 @@ $(function () {
 
   $(".header__btn").on("click", function (params) {
     $(".overlay, .overlay__block").fadeIn(1000);
+    validMsg.style.display = "none";
   });
 
   $(".overlay__close").on("click", function (params) {
@@ -106,9 +107,9 @@ VANTA.BIRDS({
   backgroundAlpha: 0.33,
 });
 
-var input = document.querySelector("#phone");
-(errorMsg = document.querySelector("#error-msg")),
-  (validMsg = document.querySelector("#valid-msg"));
+var input = document.querySelector("#phone"),
+  errorMsg = document.querySelector("#error-msg"),
+  validMsg = document.querySelector("#valid-msg");
 
 var errorMap = [
   "Invalid number",
@@ -137,11 +138,14 @@ var reset = function () {
 };
 
 input.addEventListener("blur", function () {
+  // validMsg.style.display = "none";
   reset();
   if (input.value.trim()) {
     if (intl.isValidNumber()) {
       validMsg.classList.remove("hide");
+      validMsg.style.display = "block";
     } else {
+      validMsg.style.display = "none";
       input.classList.add("error");
       var errorCode = intl.getValidationError();
       errorMsg.innerHTML = errorMap[errorCode];
