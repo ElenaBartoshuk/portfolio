@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="src/styles.css" />
-  <title>Elena Bartoshuk - Contacts page</title>
+  <title>Elena Bartoshuk - Thanks page</title>
 </head>
 
 <body id="body">
@@ -49,13 +49,14 @@
               <a class="nav-link" href="certificates.html">Cerfiticates</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-link--active" href="contact.html">Contacts</a>
+              <a class="nav-link" href="contact.html">Contacts</a>
             </li>
           </ul>
         </div>
         <button class="button header__btn" title="Request">Request a callback</button>
       </div>
     </nav>
+
   </header>
   <main class="main">
     <div class="container">
@@ -65,64 +66,16 @@
             <a class="breadcrumbs__link" href="index.html">Home</a>
           </li>
           <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="#">Contacts</a>
+            <a class="breadcrumbs__link" href="#">Thanks</a>
           </li>
         </ul>
       </div>
-      <div class="greetings">
-        <h2 class="title contacts__title">
-          Contact me
-        </h2>
-        <h3>Let's get in touch!</h3>
-      </div>
-      <section class="contact">
-        <div class="contact__inner">
-          <form class="contact__form" method="POST" action="https://formsubmit.co/elena.vivatravel@gmail.com">
-
-            <div class="contact__form-box">
-              <label class="contact__form-label">
-                <input class="contact__form-input contact__form-field" type="text" name="name" placeholder="Your Name*"
-                  minlength="2" maxlength="13" required>
-                <span class="contact__form-error">Error!</span>
-              </label>
-              <label class="contact__form-label">
-                <input class="contact__form-input contact__form-field" type="tel" id="phone2" name="phone"
-                  placeholder="Your phone*" required>
-                <span id="valid2-msg" class="hide contact__form-valid">✓ Valid</span>
-                <span id="error-msg" class="hide"></span>
-              </label>
-            </div>
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html">
-            <label class="contact__form-label">
-              <input class="contact__form-input contact__form-field" type="email" name="email"
-                placeholder="Your E-mail*" required>
-              <span class="contact__form-error">Error!</span>
-            </label>
-            <label class="contact__form-label">
-              <input class="contact__form-input contact__form-field" type="text" name="subject" placeholder="Subject">
-            </label>
-            <label class="contact__form-label">
-              <textarea class="contact__form-textarea contact__form-field" name="message"
-                placeholder="Message"></textarea>
-            </label>
-            <button class="button contact__form-btn" type="submit" title="Send me a message">Send message</button>
-          </form>
-          <div class="contact__info">
-            <ul class="contact__info-list">
-              <li class="contact__info-item">Phone:
-                <a class="contact__info-phone" href="tel:+380952942642" title="Call me">+38-095-294-26-42</a>
-              </li>
-              <li class="contact__info-item contact__info-item--telegram">Telegram:
-                <a href="https://t.me/elena_bartoshuk" target="_blank"
-                  title="Contact me on Telegram">@elena_bartoshuk</a>
-              </li>
-              <li class="contact__info-item contact__info-item--email">E-mail:
-                <a href="mailto:lena.bartoshuk@gmail.com" title="Send me an E-mail">lena.bartoshuk@gmail.com</a>
-              </li>
-            </ul>
-          </div>
+      <section id="thanks">
+        <div class="thanks__info">
+          <h2 class="thanks__title">Thanks for your message!</h2>
+          <p class="thanks__subtitle">I'll be in touch with you soon 😉</p>
         </div>
+        <img class="thanks__img" src="images/thanks.jpg" alt="Elena Bartoshuk Front-End Developer">
       </section>
     </div>
   </main>
