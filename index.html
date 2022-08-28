@@ -17,12 +17,13 @@
   <link rel="stylesheet" href="src/magnific-popup.css">
   <link href="src/slick.css" rel="stylesheet">
   <link rel="stylesheet" href="src/intlTelInput.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="src/styles.css" />
   <title>Elena Bartoshuk - Front-End developer</title>
 </head>
 
-<body>
+<body id="body">
   <header class="fixed-top">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
@@ -36,145 +37,162 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav navbar-nav-scroll">
             <li class="nav-item">
-              <a class="nav-link nav-link--active" href="index.html">Home</a>
+              <a class="nav-link nav-link--active link-body" href="#body">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="work.html">Projects</a>
+              <a class="nav-link link-projects" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="certificates.html">Cerfiticates</a>
+              <a class="nav-link link-certificates" href="#certificates">Cerfiticates</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contacts</a>
             </li>
           </ul>
         </div>
-        <button class="btn header__btn" title="Request">Request a callback</button>
+        <button class="button header__btn" title="Request">Request a callback</button>
       </div>
     </nav>
 
   </header>
-  <div class="container">
-    <section id="greeting">
-      <h2 class="greeting">
-        <small>🎉</small> Welcome to my page
-      </h2>
-      <h1>
-        I am <span>Elena Bartoshuk</span>
-      </h1>
-      <h3>👩‍💻 Front-end developer, based in Kiev, Ukraine</h3>
-      <div class="links">
-        <a class="contacts btn" href="contact.html" title="Contact Elena">Contact me</a>
-        <a class="btn about" href="about.html" title="About Elena">About me</a>
-      </div>
-    </section>
-    <section id="projects">
-      <h2 class="title">My projects</h2>
-      <div class="collection">
-        <a class="collection__item" href="work.html" title="View more projects">
-          <img class="collection__images" src="images/item2.png" alt="weather app">
-          <div class="collection__info">
-            <h6 class="collection__info-title">Weather app</h6>
+  <main class="main">
+    <div class="container">
+      <section id="greeting">
+        <h2 data-wow-delay=".5s" class="greeting wow animate__animated animate__fadeInLeft">
+          <small>🎉</small> Welcome to my page
+        </h2>
+        <h1 data-wow-delay="1s" class="wow animate__animated animate__fadeInLeft">
+          I am <span>Elena Bartoshuk</span>
+        </h1>
+        <h3 class="wow animate__animated animate__fadeInLeft" data-wow-delay="1.5s">👩‍💻 Front-end developer, based in
+          Kiev, Ukraine</h3>
+        <div class="links">
+          <a class="contacts button" href="contact.html" title="Contact Elena">Contact me</a>
+          <a class="button about" href="about.html" title="About Elena">About me</a>
+        </div>
+      </section>
+      <section id="projects">
+        <h2 class="title wow animate__animated animate__heartBeat" data-wow-delay="2s">My projects</h2>
+        <div class="collection">
+          <div class="collection__inner">
+            <a class="collection__item" href="work.html" title="View more projects">
+              <img class="collection__images" src="images/item2.png" alt="weather app">
+              <div class="collection__info">
+                <h6 class="collection__info-title">Weather app</h6>
+              </div>
+            </a>
+            <a class="collection__item" href="work.html" title="View more projects">
+              <img class="collection__images" src="images/item1.png" alt="surf landing page">
+              <div class="collection__info">
+                <h6 class="collection__info-title">Surf landing</h6>
+              </div>
+            </a>
+            <a class="collection__item" href="work.html" title="View more projects">
+              <img class="collection__images" src="images/item3.png" alt="safari landing page">
+              <div class="collection__info">
+                <h6 class="collection__info-title">Safari travel landing</h6>
+              </div>
+            </a>
+            <a class="collection__item" href="work.html" title="View more projects">
+              <img class="collection__images" src="images/maldives.jpg" alt="dictionary app">
+              <div class="collection__info">
+                <h6 class="collection__info-title">Dictionary app</h6>
+              </div>
+            </a>
+            <a class="collection__item" href="work.html" title="View more projects">
+              <img class="collection__images" src="images/maldives.jpg" alt="project landing page">
+              <div class="collection__info">
+                <h6 class="collection__info-title">Coming soon</h6>
+              </div>
+            </a>
           </div>
-        </a>
-        <a class="collection__item" href="work.html" title="View more projects">
-          <img class="collection__images" src="images/item1.png" alt="surf landing page">
-          <div class="collection__info">
-            <h6 class="collection__info-title">Surf landing</h6>
-          </div>
-        </a>
-        <a class="collection__item" href="work.html" title="View more projects">
-          <img class="collection__images" src="images/item3.png" alt="safari landing page">
-          <div class="collection__info">
-            <h6 class="collection__info-title">Safari travel landing</h6>
-          </div>
-        </a>
-        <a class="collection__item" href="work.html" title="View more projects">
-          <img class="collection__images" src="images/maldives.jpg" alt="surf landing page">
-          <div class="collection__info">
-            <h6 class="collection__info-title">Surf landing</h6>
-          </div>
-        </a>
-      </div>
-      <a class="btn gallery__add" href="work.html" title="View Elena's Projects">VIEW MORE</a>
-    </section>
-    <section id="certificates">
-      <div class="gallery">
-        <h2 class="title">My certificates</h2>
-        <div class="container-fluid">
-          <div class="gallery__buttons">
-            <button class="gallery__btn" data-filter=".all">
-              All</button>
-            <button class="gallery__btn" data-filter=".shecodes">
-              SheCodes</button>
-            <button class="gallery__btn" data-filter=".testprovider">
-              TestProvider</button>
-          </div>
-          <div class="gallery__inner">
-            <div class="gallery__items mix all ">
-              <a class="gallery__item" href="images/gallery/2.png" title="SheCodes Plus">
-                <img class="gallery__images" src="images/gallery/2.png" alt="SheCodes certificate Plus">
-              </a>
 
-              <a class="gallery__item" href="images/gallery/1.png" title="SheCodes Basic">
-                <img class="gallery__images" src="images/gallery/1.png" alt="SheCodes Certificate Basic">
-              </a>
-              <a class="gallery__item" href="images/gallery/4.jpg" title="TestProvider JS Extended Capabilities">
-                <img class="gallery__images" src="images/gallery/4.jpg"
-                  alt="TestProvider certificate JS Extended Capabilities">
-              </a>
-              <a class="gallery__item" href="images/gallery/7.jpg" title="TestProvider HTML&CSS Advanced">
-                <img class="gallery__images" src="images/gallery/7.jpg"
-                  alt="TestProvider certificate HTML&CSS Advanced">
-              </a>
-              <a class="gallery__item" href="images/gallery/9.jpg" title="TestProvider JQuery">
-                <img class="gallery__images" src="images/gallery/9.jpg" alt="TestProvider certificate JQuery">
-              </a>
+          <a class="button gallery__add wow animate__animated animate__bounce" data-wow-delay="2s" href="work.html"
+            title="View Projects Page">VIEW MORE</a>
+        </div>
+      </section>
+      <section id="certificates">
+        <div class="gallery">
+          <h2 class="title wow animate__animated animate__heartBeat" data-wow-delay="2s">My certificates</h2>
+          <div class="container-fluid">
+            <div class="gallery__buttons">
+              <button class="gallery__btn" data-filter=".all">
+                All</button>
+              <button class="gallery__btn" data-filter=".shecodes">
+                SheCodes</button>
+              <button class="gallery__btn" data-filter=".testprovider">
+                TestProvider</button>
             </div>
-            <div class="gallery__items mix shecodes">
-              <a class="gallery__item" href="images/gallery/2.png" title="SheCodes Plus">
-                <img class="gallery__images" src="images/gallery/2.png" alt="SheCodes certificate Plus">
-              </a>
-              <a class="gallery__item" href="images/gallery/1.png" title="SheCodes Basic">
-                <img class="gallery__images" src="images/gallery/1.png" alt="SheCodes certificate Basic">
-              </a>
-              <a class="gallery__item" href="images/gallery/3.png" title="SheCodes Responsive">
-                <img class="gallery__images" src="images/gallery/3.png" alt="SheCodes certificate Responsive">
-              </a>
-              <a class="gallery__item" href="images/gallery/2.png" title="SheCodes React">
-                <img class="gallery__images" src="images/gallery/2.png" alt="SheCodes certificate React">
-              </a>
-            </div>
-            <div class="gallery__items mix testprovider">
-              <a class="gallery__item" href="images/gallery/3.jpg" title="TestProvider JS Starter">
-                <img class="gallery__images" src="images/gallery/3.jpg" alt="TestProvider certificate JS Starter">
-              </a>
-              <a class="gallery__item" href="images/gallery/4.jpg" title="TestProvider JS Extended Capabilities">
-                <img class="gallery__images" src="images/gallery/4.jpg"
-                  alt="TestProvider certificate JS Extended Capabilities">
-              </a>
-              <a class="gallery__item" href="images/gallery/10.jpg" title="TestProvider Git Basics">
-                <img class="gallery__images" src="images/gallery/10.jpg" alt="TestProvider certificate Git Basics">
-              </a>
+            <div class="gallery__inner">
+              <div class="gallery__items mix all ">
+                <a class="gallery__item" href="images/gallery/2.png" title="SheCodes Plus">
+                  <img class="gallery__images" src="images/gallery/2.png" alt="SheCodes certificate Plus">
+                </a>
 
-              <a class="gallery__item" href="images/gallery/6.jpg" title="TestProvider HTML&CSS Essential">
-                <img class="gallery__images" src="images/gallery/6.jpg"
-                  alt="TestProvider certificate HTML&CSS Essential">
-              </a>
-              <a class="gallery__item" href="images/gallery/7.jpg" title="TestProvider HTML&CSS Advanced">
-                <img class="gallery__images" src="images/gallery/7.jpg"
-                  alt="TestProvider certificate HTML&CSS Advanced">
-              </a>
+                <a class="gallery__item" href="images/gallery/1.png" title="SheCodes Basic">
+                  <img class="gallery__images" src="images/gallery/1.png" alt="SheCodes Certificate Basic">
+                </a>
+                <a class="gallery__item" href="images/gallery/4.jpg" title="TestProvider JS Extended Capabilities">
+                  <img class="gallery__images" src="images/gallery/4.jpg"
+                    alt="TestProvider certificate JS Extended Capabilities">
+                </a>
+                <a class="gallery__item" href="images/gallery/7.jpg" title="TestProvider HTML&CSS Advanced">
+                  <img class="gallery__images" src="images/gallery/7.jpg"
+                    alt="TestProvider certificate HTML&CSS Advanced">
+                </a>
+                <a class="gallery__item" href="images/gallery/9.jpg" title="TestProvider JQuery">
+                  <img class="gallery__images" src="images/gallery/9.jpg" alt="TestProvider certificate JQuery">
+                </a>
+              </div>
+              <div class="gallery__items mix shecodes">
+                <a class="gallery__item" href="images/gallery/2.png" title="SheCodes Plus">
+                  <img class="gallery__images" src="images/gallery/2.png" alt="SheCodes certificate Plus">
+                </a>
+                <a class="gallery__item" href="images/gallery/1.png" title="SheCodes Basic">
+                  <img class="gallery__images" src="images/gallery/1.png" alt="SheCodes certificate Basic">
+                </a>
+                <a class="gallery__item" href="images/gallery/3.png" title="SheCodes Responsive">
+                  <img class="gallery__images" src="images/gallery/3.png" alt="SheCodes certificate Responsive">
+                </a>
+                <a class="gallery__item" href="images/gallery/2.png" title="SheCodes React">
+                  <img class="gallery__images" src="images/gallery/2.png" alt="SheCodes certificate React">
+                </a>
+              </div>
+              <div class="gallery__items mix testprovider">
+                <a class="gallery__item" href="images/gallery/3.jpg" title="TestProvider JS Starter">
+                  <img class="gallery__images" src="images/gallery/3.jpg" alt="TestProvider certificate JS Starter">
+                </a>
+                <a class="gallery__item" href="images/gallery/4.jpg" title="TestProvider JS Extended Capabilities">
+                  <img class="gallery__images" src="images/gallery/4.jpg"
+                    alt="TestProvider certificate JS Extended Capabilities">
+                </a>
+                <a class="gallery__item" href="images/gallery/10.jpg" title="TestProvider Git Basics">
+                  <img class="gallery__images" src="images/gallery/10.jpg" alt="TestProvider certificate Git Basics">
+                </a>
+
+                <a class="gallery__item" href="images/gallery/6.jpg" title="TestProvider HTML&CSS Essential">
+                  <img class="gallery__images" src="images/gallery/6.jpg"
+                    alt="TestProvider certificate HTML&CSS Essential">
+                </a>
+                <a class="gallery__item" href="images/gallery/7.jpg" title="TestProvider HTML&CSS Advanced">
+                  <img class="gallery__images" src="images/gallery/7.jpg"
+                    alt="TestProvider certificate HTML&CSS Advanced">
+                </a>
+              </div>
+              <a class="button gallery__add wow animate__animated animate__bounce" data-wow-delay="2s"
+                href="certificates.html" title="View Verified Cerfiticates Page">VIEW MORE</a>
             </div>
-            <a class="btn gallery__add" href="certificates.html" title="View Verified Cerfiticates">VIEW MORE</a>
           </div>
         </div>
-      </div>
-    </section>
-    <footer>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer__top"></div>
       <div class="social-links">
         <a class="social-links__link" href="https://github.com/ElenaBartoshuk/" target="_blank" title="My Github">
           <svg class="social-links__img" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
@@ -198,7 +216,7 @@
               d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
           </svg>
         </a>
-        <a class="social-links__link" href="mailto:lena.bartoshuk@gmail.com" title="Send me an E-mail">
+        <a class="social-links__link" href="mailto:lena.bartoshuk@gmail.com" title="Send me an Email">
           <svg class="social-links__img" width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
             clip-rule="evenodd">
             <path
@@ -206,6 +224,13 @@
           </svg>
         </a>
       </div>
+      <div class="footer__arrows">
+        <a class="go-top animate__animated animate__fadeInUp animate__infinite infinite animate__slow" href="#body">
+          <img src="images/arrows-up.svg" alt="arrows up">
+        </a>
+      </div>
+    </div>
+    <div class="footer__copy">
       <div class="source__code">This website was coded by Elena Bartoshuk, and is
         <a class="source__code-link" href="https://github.com/ElenaBartoshuk/portfolio" target="_blank">
           <svg class="source__code-img" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
@@ -215,35 +240,42 @@
           open-sourced</a>
       </div>
       <div class="copy"><span>© Copyright Elena Bartoshuk</span>, 2022, All Rights Reserved</div>
-    </footer>
-    <div class="overlay">
-      <div class="overlay__popup">
-        <img class="overlay__close" src="images/close.svg" alt="">
-        <div class="overlay__block">
-          <h3 class="overlay__title">Request a Callback</h3>
-          <p class="overlay__subtitle">Enter your details to receive a callback from me</p>
-          <form class="form popup__form" action="">
-            <label class="form__label">
-              <input class="form__input" placeholder="Your name" type="text" minlength="2" maxlength="13" required>
-            </label>
+    </div>
+    </div>
+  </footer>
+  <div class="overlay">
+    <div class="overlay__popup">
+      <img class="overlay__close" src="images/close.svg" alt="">
+      <div class="overlay__block">
+        <h3 class="overlay__title">Request a Callback</h3>
+        <p class="overlay__subtitle">Enter your details to receive a callback from me</p>
+        <form class="form popup__form" action="">
+          <label class="form__label popup__label">
+            <input class="form__input popup__input" placeholder="Your name" type="text" minlength="2" maxlength="13"
+              required>
+            <svg class="user" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.26797 7.1C9.06797 7 8.76797 6.9 8.56797 6.3C9.26797 5.6 9.66797 4.4 9.66797 3C9.66797 1.3 8.36797 0 6.66797 0C4.96797 0 3.66797 1.3 3.66797 3C3.66797 4.4 4.06797 5.6 4.76797 6.4C4.56797 7 4.16797 7.1 4.06797 7.2C2.26797 7.7 0.667969 8.5 0.667969 10.6C0.667969 12.8 5.26797 13 6.66797 13C12.268 13 12.668 11.2 12.668 10.6C12.668 8.4 11.068 7.7 9.26797 7.1ZM6.66792 1.19995C7.66792 1.19995 8.46792 1.99995 8.46792 2.99995C8.46792 4.29995 8.06792 5.29995 7.46792 5.69995C6.96792 5.99995 6.36792 5.99995 5.86792 5.69995C5.16792 5.29995 4.86792 4.29995 4.86792 2.99995C4.86792 1.99995 5.66792 1.19995 6.66792 1.19995ZM6.66792 11.8C4.36792 11.8 1.86792 11.3 1.86792 10.6C1.86792 9.3 2.66792 8.8 4.46792 8.2C5.06792 8 5.56792 7.6 5.86792 7C6.06792 7 6.36792 7.1 6.66792 7.1C6.96792 7.1 7.26792 7 7.46792 7C7.76792 7.6 8.26792 8 8.86792 8.2C10.6679 8.9 11.4679 9.3 11.4679 10.6C11.3679 11.3 8.86792 11.8 6.66792 11.8Z"
+                fill="currentColor" fill-opacity="0.5"></path>
+            </svg>
+          </label>
 
-            <label class="form__label">
-              <input class="form__input" placeholder="Your phone (+ and number)" type="tel" id="phone" required>
-              <span id="valid-msg" class="hide">✓ Valid</span>
-              <span id="error-msg" class="hide"></span>
-            </label>
+          <label class="form__label">
+            <input class="form__input" placeholder="Your phone (+ and number)" type="tel" id="phone" required>
+            <span id="valid-msg" class="hide">✓ Valid</span>
+            <span id="error-msg" class="hide"></span>
+          </label>
 
-            <label class="form__label">
-              <input class="form__input" placeholder="Best time to call" type="text">
-            </label>
+          <label class="form__label">
+            <input class="form__input" placeholder="Best time to call" type="text">
+          </label>
 
-            <button class="btn callback__button">Send request</button>
-          </form>
-        </div>
-        <div class="overlay__thanks">
-          <h3 class="overlay__title">Thanks for your request!</h3>
-          <p class="overlay__subtitle">I'll call you in 2 hours</p>
-        </div>
+          <button class="button callback__button">Send request</button>
+        </form>
+      </div>
+      <div class="overlay__thanks">
+        <h3 class="overlay__title">Thanks for your request!</h3>
+        <p class="overlay__subtitle">I'll call you in 2 hours</p>
       </div>
     </div>
   </div>
@@ -254,6 +286,7 @@
   <script src="src/slick.min.js"></script>
   <script src="src/three.r119.min.js"></script>
   <script src="src/vanta.birds.min.js"></script>
+  <script src="src/wow.min.js"></script>
   <script src="src/main.js"></script>
 </body>
 

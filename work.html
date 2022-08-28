@@ -17,12 +17,13 @@
   <link rel="stylesheet" href="src/magnific-popup.css">
   <link href="src/slick.css" rel="stylesheet">
   <link rel="stylesheet" href="src/intlTelInput.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="src/styles.css" />
   <title>Elena Bartoshuk - Projects page</title>
 </head>
 
-<body>
+<body id="body">
 
   <header class="fixed-top">
 
@@ -54,76 +55,122 @@
             </li>
           </ul>
         </div>
-        <button class="btn header__btn" title="Request">Request a callback</button>
+        <button class="button header__btn" title="Request">Request a callback</button>
       </div>
     </nav>
   </header>
-  <div class="container">
-    <div class="breadcrumbs">
-      <ul class="breadcrumbs__list">
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="index.html">Home</a>
-        </li>
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="#">Projects</a>
-        </li>
-      </ul>
-    </div>
-    <h2 id="projects" class="title">My projects</h2>
-    <div class="projects">
-      <div class="projects__item">
-        <div class="projects__info">
-          <h6 class="projects__info-title">Weather app</h6>
-          <p class="projects__info-text">Built using HTML, an active API, and advanced CSS and JavaScript
-          </p>
-          <div class="projects__btns">
-            <button class="btn projects__btn" title="View weather app">Github repo</button>
-            <button class="btn projects__btn projects__btn--live" title="View weather app">View live</button>
+  <main class="main">
+    <div class="container">
+      <div class="breadcrumbs">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="index.html">Home</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Projects</a>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="title work">My projects</h2>
+      <div class="projects">
+        <div class="projects__item">
+          <div class="projects__info">
+            <h6 class="projects__info-title">Weather app</h6>
+            <p class="projects__info-text">Built using HTML, an active API, and advanced CSS and JavaScript
+            </p>
+            <div class="projects__links">
+              <a class="projects__link projects__btn button" href="https://github.com/ElenaBartoshuk/weather_app"
+                target="_blank" title="View weather app on Github">Github repo</a>
+              <a class="projects__link projects__btn button projects__btn--live"
+                href="https://strong-souffle-ea284b.netlify.app" target="_blank" title="View weather app live">View
+                live</a>
+            </div>
+          </div>
+          <a class="projects__link" href="https://strong-souffle-ea284b.netlify.app" target="_blank">
+            <img class="projects__images wow animate__animated animate__fadeInRight" data-wow-delay="0.5s"
+              src="images/item2.png" alt="weather app" title="View weather app live">
+          </a>
+        </div>
+        <div class="projects__item reverse">
+          <a class="projects__link" href="https://leafy-kleicha-eb6ddb.netlify.app" target="_blank">
+            <img class="projects__images wow animate__animated animate__fadeInLeft" data-wow-delay="0.5s"
+              src="images/item1.png" alt="surf landing page" title="View surf landing page live">
+          </a>
+          <div class="projects__info">
+            <h6 class="projects__info-title">Surf landing page</h6>
+            <p class="projects__info-text">Built with GULP, HTML, Preprocessor SCSS, JavaScript, and animation
+            </p>
+            <div class="projects__links">
+              <a class="projects__link projects__btn button" href="https://github.com/ElenaBartoshuk/surf"
+                target="_blank" title="View surf landing page on Github">Github repo</a>
+              <a class="projects__link projects__btn button projects__btn--live"
+                href="https://leafy-kleicha-eb6ddb.netlify.app" target="_blank" title="View surf landing page live">View
+                live</a>
+            </div>
           </div>
         </div>
-        <a class="projects__link" href="https://strong-souffle-ea284b.netlify.app" target="_blank">
-          <img class="projects__images" src="images/item2.png" alt="weather app" title="See weather app">
+        <div class="projects__item">
+          <div class="projects__info">
+            <h6 class="projects__info-title">Safari travel landing page</h6>
+            <p class="projects__info-text">Built with HTML, CSS, and JavaScript
+            </p>
+            <div class="projects__links">
+              <a class="projects__link projects__btn button" href="https://github.com/ElenaBartoshuk/safari"
+                target="_blank" title="View safari landing page on Github">Github repo</a>
+              <a class="projects__link projects__btn button projects__btn--live"
+                href="https://resilient-brioche-81b0c1.netlify.app" target="_blank"
+                title="View safari landing page live">View
+                live</a>
+            </div>
+          </div>
+          <a class="projects__link" href="https://resilient-brioche-81b0c1.netlify.app" target="_blank">
+            <img class="projects__images wow animate__animated animate__fadeInRight" data-wow-delay="0.5s"
+              src="images/item3.png" alt="safari landing page" title="View safari landing page live">
+          </a>
+        </div>
+        <div class="projects__item reverse">
+          <a class="projects__link" href="#" target="_blank">
+            <img class="projects__images wow animate__animated animate__fadeInLeft" data-wow-delay="0.5s"
+              src="images/maldives.jpg" alt="dictionary app" title="View dictionary app live">
+          </a>
+          <div class="projects__info">
+            <h6 class="projects__info-title">Dictionary app - <small>Coming soon</small></h6>
+            <p class="projects__info-text">Built using HTML, an active API, advanced CSS, and React
+            </p>
+            <div class="projects__links">
+              <a class="projects__link projects__btn button" href="#" target="_blank"
+                title="View dictionary app on Github">Github repo</a>
+              <a class="projects__link projects__btn button projects__btn--live" href="#" target="_blank"
+                title="View dictionary app live">View live</a>
+            </div>
+          </div>
+        </div>
+        <div class="projects__item">
+          <div class="projects__info">
+            <h6 class="projects__info-title">Coming soon</h6>
+            <p class="projects__info-text">Built using HTML, an active API, advanced CSS, and React
+            </p>
+            <div class="projects__links">
+              <a class="projects__link projects__btn button" href="#" target="_blank"
+                title="View project on Github">Github
+                repo</a>
+              <a class="projects__link projects__btn button projects__btn--live" href="#" target="_blank"
+                title="View project live">View live</a>
+            </div>
+          </div>
+          <a class="projects__link" href="#" target="_blank">
+            <img class="projects__images wow animate__animated animate__fadeInRight" data-wow-delay="0.5s"
+              src="images/maldives.jpg" alt="dictionary app" title="View project live">
+          </a>
+        </div>
 
-        </a>
       </div>
-      <div class="projects__item reverse">
-        <a class="projects__link" href="https://leafy-kleicha-eb6ddb.netlify.app/" target="_blank">
-          <img class="projects__images" src="images/item1.png" alt="serf landing page" title="See surf landing page">
-          <button class="btn projects__btn" title="View surf landing page">View project</button>
-        </a>
-        <div class="projects__info">
-          <h6 class="projects__info-title">Serf landing page</h6>
-          <p class="projects__info-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, nobis illo
-            tenetur nostrum fuga possimus delectus? Aliquam soluta aspernatur deserunt velit officia natus
-          </p>
-        </div>
-      </div>
-      <div class="projects__item">
-        <div class="projects__info">
-          <h6 class="projects__info-title">Safari travel landing page</h6>
-          <p class="projects__info-text">Built with HTML, CSS, and JavaScript
-          </p>
-        </div>
-        <a class="projects__link" href="https://resilient-brioche-81b0c1.netlify.app" target="_blank">
-          <img class="projects__images" src="images/item3.png" alt="safari landing page"
-            title="See safari landing page">
-          <button class="btn projects__btn" title="View safari landing page">View project</button>
-        </a>
-      </div>
-      <div class="projects__item reverse">
-        <a class="projects__link" href="#" target="_blank">
-          <img class="projects__images" src="images/maldives.jpg" alt="dictionary app" title="Dictionary app">
-          <button class="btn projects__btn" title="View dictionary app">Coming soon</button>
-        </a>
-        <div class="projects__info">
-          <h6 class="projects__info-title">Dictionary app</h6>
-          <p class="projects__info-text">Built using HTML, an active API, advanced CSS, and React
-          </p>
-        </div>
-      </div>
-
     </div>
-    <footer>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer__top"></div>
       <div class="social-links">
         <a class="social-links__link" href="https://github.com/ElenaBartoshuk/" target="_blank" title="My Github">
           <svg class="social-links__img" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
@@ -155,6 +202,13 @@
           </svg>
         </a>
       </div>
+      <div class="footer__arrows">
+        <a class="go-top animate__animated animate__fadeInUp animate__infinite infinite animate__slow" href="#body">
+          <img src="images/arrows-up.svg" alt="arrows up">
+        </a>
+      </div>
+    </div>
+    <div class="footer__copy">
       <div class="source__code">This website was coded by Elena Bartoshuk, and is
         <a class="source__code-link" href="https://github.com/ElenaBartoshuk/portfolio" target="_blank">
           <svg class="source__code-img" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
@@ -164,35 +218,42 @@
           open-sourced</a>
       </div>
       <div class="copy"><span>© Copyright Elena Bartoshuk</span>, 2022, All Rights Reserved</div>
-    </footer>
-    <div class="overlay">
-      <div class="overlay__popup">
-        <img class="overlay__close" src="images/close.svg" alt="">
-        <div class="overlay__block">
-          <h3 class="overlay__title">Request a Callback</h3>
-          <p class="overlay__subtitle">Enter your details to receive a callback from me</p>
-          <form class="form popup__form" action="">
-            <label class="form__label">
-              <input class="form__input" placeholder="Your name" type="text" minlength="2" maxlength="13" required>
-            </label>
+    </div>
+    </div>
+  </footer>
+  <div class="overlay">
+    <div class="overlay__popup">
+      <img class="overlay__close" src="images/close.svg" alt="">
+      <div class="overlay__block">
+        <h3 class="overlay__title">Request a Callback</h3>
+        <p class="overlay__subtitle">Enter your details to receive a callback from me</p>
+        <form class="form popup__form" action="">
+          <label class="form__label popup__label">
+            <input class="form__input popup__input" placeholder="Your name" type="text" minlength="2" maxlength="13"
+              required>
+            <svg class="user" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.26797 7.1C9.06797 7 8.76797 6.9 8.56797 6.3C9.26797 5.6 9.66797 4.4 9.66797 3C9.66797 1.3 8.36797 0 6.66797 0C4.96797 0 3.66797 1.3 3.66797 3C3.66797 4.4 4.06797 5.6 4.76797 6.4C4.56797 7 4.16797 7.1 4.06797 7.2C2.26797 7.7 0.667969 8.5 0.667969 10.6C0.667969 12.8 5.26797 13 6.66797 13C12.268 13 12.668 11.2 12.668 10.6C12.668 8.4 11.068 7.7 9.26797 7.1ZM6.66792 1.19995C7.66792 1.19995 8.46792 1.99995 8.46792 2.99995C8.46792 4.29995 8.06792 5.29995 7.46792 5.69995C6.96792 5.99995 6.36792 5.99995 5.86792 5.69995C5.16792 5.29995 4.86792 4.29995 4.86792 2.99995C4.86792 1.99995 5.66792 1.19995 6.66792 1.19995ZM6.66792 11.8C4.36792 11.8 1.86792 11.3 1.86792 10.6C1.86792 9.3 2.66792 8.8 4.46792 8.2C5.06792 8 5.56792 7.6 5.86792 7C6.06792 7 6.36792 7.1 6.66792 7.1C6.96792 7.1 7.26792 7 7.46792 7C7.76792 7.6 8.26792 8 8.86792 8.2C10.6679 8.9 11.4679 9.3 11.4679 10.6C11.3679 11.3 8.86792 11.8 6.66792 11.8Z"
+                fill="currentColor" fill-opacity="0.5"></path>
+            </svg>
+          </label>
 
-            <label class="form__label">
-              <input class="form__input" placeholder="Your phone (+ and number)" type="tel" id="phone" required>
-              <span id="valid-msg" class="hide">✓ Valid</span>
-              <span id="error-msg" class="hide"></span>
-            </label>
+          <label class="form__label">
+            <input class="form__input" placeholder="Your phone (+ and number)" type="tel" id="phone" required>
+            <span id="valid-msg" class="hide">✓ Valid</span>
+            <span id="error-msg" class="hide"></span>
+          </label>
 
-            <label class="form__label">
-              <input class="form__input" placeholder="Best time to call" type="text">
-            </label>
+          <label class="form__label">
+            <input class="form__input" placeholder="Best time to call" type="text">
+          </label>
 
-            <button class="btn callback__button">Send request</button>
-          </form>
-        </div>
-        <div class="overlay__thanks">
-          <h3 class="overlay__title">Thanks for your request!</h3>
-          <p class="overlay__subtitle">I'll call you in 2 hours</p>
-        </div>
+          <button class="button callback__button">Send request</button>
+        </form>
+      </div>
+      <div class="overlay__thanks">
+        <h3 class="overlay__title">Thanks for your request!</h3>
+        <p class="overlay__subtitle">I'll call you in 2 hours</p>
       </div>
     </div>
   </div>
@@ -203,6 +264,7 @@
   <script src="src/three.r119.min.js"></script>
   <script src="src/vanta.birds.min.js"></script>
   <script src="src/intlTelInput.js"></script>
+  <script src="src/wow.min.js"></script>
   <script src="src/main.js"></script>
 </body>
 

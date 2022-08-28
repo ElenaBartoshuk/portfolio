@@ -92,8 +92,8 @@ $(function () {
     });
   }
 
-  if ($(".collection").length) {
-    $(".collection").slick({
+  if ($(".collection__inner").length) {
+    $(".collection__inner").slick({
       arrows: true,
       dots: true,
       slidesToShow: 3,
@@ -128,14 +128,21 @@ $(function () {
 
   $(".header__btn").on("click", function (params) {
     $(".overlay, .overlay__block").fadeIn(1000);
-    // if ($("#valid-msg").length) {
-    //   $("#valid-msg").style.display = "none";
-    // }
   });
 
   $(".overlay__close").on("click", function (params) {
     $(".overlay, .overlay__block, .overlay__thanks").fadeOut(1000);
   });
+
+  $(".link-projects, .link-certificates, .link-body, .go-top").on(
+    "click",
+    function (event) {
+      event.preventDefault();
+      var id = $(this).attr("href"),
+        top = $(id).offset().top;
+      $("body,html").animate({ scrollTop: top }, 200);
+    }
+  );
 
   $(".callback__button").on("click", function (event) {
     event.preventDefault();
@@ -153,33 +160,33 @@ $(function () {
       },
     });
   }
-  // var mixer = mixitup(".gallery__inner", {
-  //   load: {
-  //     filter: ".all",
-  //   },
-  // });
+
+  new WOW().init();
 });
 
-if ($("#greeting").length) {
-  VANTA.BIRDS({
-    el: "#greeting",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.0,
-    minWidth: 200.0,
-    scale: 1.0,
-    scaleMobile: 1.0,
-    backgroundColor: "#ffffff",
-    color1: "#f02171",
-    color2: "#192bd2",
-    colorMode: "lerp",
-    birdSize: 0.8,
-    wingSpan: 25.0,
-    separation: 29.0,
-    backgroundAlpha: 0.33,
-  });
-}
+setTimeout(function () {
+  new WOW().init();
+  if ($("#greeting").length) {
+    VANTA.BIRDS({
+      el: "#greeting",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      backgroundColor: "#ffffff",
+      color1: "#f02171",
+      color2: "#192bd2",
+      colorMode: "lerp",
+      birdSize: 0.8,
+      wingSpan: 25.0,
+      separation: 29.0,
+      backgroundAlpha: 0.33,
+    });
+  }
+}, 2500);
 
 //  разделить код набора с помощью скобок
 // var intlNumber = $("#phone").intlTelInput("getNumber"); // get full number eg +17024181234
@@ -189,22 +196,6 @@ if ($("#greeting").length) {
 // countryCode = "+" + countryCode; // convert 1 to +1
 
 // var newNo = intlNumber.replace(countryCode, "(" + coountryCode+ ")" ); // final version
-
-// VANTA.NET({
-//   el: "#greeting",
-//   mouseControls: true,
-//   touchControls: true,
-//   gyroControls: false,
-//   minHeight: 200.0,
-//   minWidth: 200.0,
-//   scale: 1.0,
-//   scaleMobile: 1.0,
-//   points: 12.0,
-//   maxDistance: 24.0,
-//   spacing: 13.0,
-//   backgroundColor: "#fff",
-//   color: "#fe3e57",
-// });
 
 // var iti = window.intlTelInput(input, {
 //   initialCountry: "auto",
