@@ -96,12 +96,13 @@ $(function () {
     $(".collection__inner").slick({
       arrows: true,
       dots: true,
+      infinite: true,
       slidesToShow: 3,
       slidesToScroll: 1,
       prevArrow:
-        '<button type="button" class="slick-btn slick-prev"><img src="images/arrow-left.svg" alt=""></button>',
+        '<button type="button" class="slick-btn slick-prev"><img src="images/arrow-left.svg" alt="prev slider arrow"></button>',
       nextArrow:
-        '<button type="button" class="slick-btn slick-next"><img src="images/arrow-right.svg" alt=""></button>',
+        '<button type="button" class="slick-btn slick-next"><img src="images/arrow-right.svg" alt="next slider arrow"></button>',
 
       // responsive: [
       //   {
@@ -160,12 +161,10 @@ $(function () {
       },
     });
   }
-
-  new WOW().init();
 });
 
+new WOW().init();
 setTimeout(function () {
-  new WOW().init();
   if ($("#greeting").length) {
     VANTA.BIRDS({
       el: "#greeting",
@@ -177,7 +176,8 @@ setTimeout(function () {
       scale: 1.0,
       scaleMobile: 1.0,
       backgroundColor: "#ffffff",
-      color1: "#f02171",
+      // color1: "#f02171",
+      color1: "#fe3e57",
       color2: "#192bd2",
       colorMode: "lerp",
       birdSize: 0.8,
