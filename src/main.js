@@ -104,26 +104,20 @@ $(function () {
       nextArrow:
         '<button type="button" class="slick-btn slick-next"><img src="images/arrow-right.svg" alt="next slider arrow"></button>',
 
-      // responsive: [
-      //   {
-      //     breakpoint: 1141,
-      //     settings: {
-      //       slidesToShow: 3,
-      //     },
-      //   },
-      //   {
-      //     breakpoint: 846,
-      //     settings: {
-      //       slidesToShow: 2,
-      //     },
-      //   },
-      //   {
-      //     breakpoint: 586,
-      //     settings: {
-      //       slidesToShow: 1,
-      //     },
-      //   },
-      // ],
+      responsive: [
+        {
+          breakpoint: 641,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 426,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
     });
   }
 
@@ -160,6 +154,10 @@ $(function () {
         filter: ".all",
       },
     });
+  }
+
+  if ($(".contact__form-error").value.length === 0) {
+    $(".contact__form-error").style.display = "none";
   }
 });
 
