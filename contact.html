@@ -53,7 +53,6 @@
             </li>
           </ul>
         </div>
-        <button class="button header__btn" title="Request">Request a callback</button>
       </div>
     </nav>
   </header>
@@ -77,18 +76,16 @@
       </div>
       <section class="contact">
         <div class="contact__inner">
-          <!-- <form class="contact__form" method="POST" action="https://formspree.io/f/mjvzkloz"> -->
           <form class="contact__form" method="POST" action="https://formsubmit.co/elena.vivatravel@gmail.com">
             <div class="contact__form-box">
               <label class="contact__form-label">
                 <input class="contact__form-input contact__form-field" type="text" name="name" placeholder="Your Name*"
                   minlength="2" maxlength="13" required>
-                <span class="contact__form-error">Error!</span>
               </label>
               <label class="contact__form-label">
-                <input class="contact__form-input contact__form-field" type="tel" id="phone2" name="phone"
-                  placeholder="Your phone*" required>
-                <span id="valid2-msg" class="hide contact__form-valid">✓ Valid</span>
+                <input class="contact__form-input contact__form-field" type="tel" id="phone" name="phone"
+                  placeholder="Your phone (+ and number)" required>
+                <span id="valid-msg" class="hide contact__form-valid">✓ Valid</span>
                 <span id="error-msg" class="hide"></span>
               </label>
             </div>
@@ -97,7 +94,6 @@
             <label class="contact__form-label">
               <input class="contact__form-input contact__form-field" type="email" name="email"
                 placeholder="Your E-mail*" required>
-              <span class="contact__form-error">Error!</span>
             </label>
             <label class="contact__form-label">
               <input class="contact__form-input contact__form-field" type="text" name="subject" placeholder="Subject">
@@ -185,7 +181,7 @@
     </div>
     </div>
   </footer>
-  <div class="overlay">
+  <!-- <div class="overlay">
     <div class="overlay__popup">
       <img class="overlay__close" src="images/close.svg" alt="close icon">
       <div class="overlay__block">
@@ -220,7 +216,7 @@
         <p class="overlay__subtitle">I'll call you in 2 hours</p>
       </div>
     </div>
-  </div>
+  </div> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="src/mixitup.min.js"></script>
   <script src="src/jquery.magnific-popup.min.js"></script>

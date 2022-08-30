@@ -1,13 +1,14 @@
-$(".header__btn").on("click", function () {
-  if ($("#valid-msg").length) {
-    $("#valid-msg").css("display", "none");
-  }
+$(function () {
+  $(".header__btn").on("click", function () {
+    if ($("#valid-msg").length) {
+      $("#valid-msg").css("display", "none");
+    }
+  });
 });
 
-var input = document.querySelectorAll('input[type="tel"]'),
+var input = document.querySelector("#phone"),
   errorMsg = document.querySelector("#error-msg"),
   validMsg = document.querySelector("#valid-msg");
-validSecondMsg = document.querySelector("#valid2-msg");
 
 var errorMap = [
   "Invalid number",
@@ -17,60 +18,50 @@ var errorMap = [
   "Invalid number",
 ];
 
-for (let i = 0; i < input.length; i++) {
-  var iti = window.intlTelInput(input[i], {
-    initialCountry: "auto",
-    geoIpLookup: function (success, failure) {
-      $.get("https://ipinfo.io", function () {}, "jsonp").always(function (
-        resp
-      ) {
-        var countryCode = resp && resp.country ? resp.country : "";
-        success(countryCode);
-      });
-    },
-    utilsScript: "src/utils.js",
-  });
+var iti = window.intlTelInput(input, {
+  initialCountry: "auto",
+  geoIpLookup: function (success, failure) {
+    $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
+      var countryCode = resp && resp.country ? resp.country : "";
+      success(countryCode);
+    });
+  },
+  utilsScript: "src/utils.js",
+});
 
-  var reset = function () {
-    input[i].classList.remove("error");
-    errorMsg.innerHTML = "";
-    errorMsg.classList.add("hide");
-    validMsg.classList.add("hide");
-    if (validSecondMsg) {
-      validSecondMsg.classList.add("hide");
+var reset = function () {
+  input.classList.remove("error");
+  errorMsg.innerHTML = "";
+  errorMsg.classList.add("hide");
+  validMsg.classList.add("hide");
+};
+
+input.addEventListener("blur", function () {
+  reset();
+  if (input.value.trim()) {
+    if (iti.isValidNumber()) {
+      validMsg.classList.remove("hide");
+      validMsg.style.display = "block";
+    } else {
+      validMsg.style.display = "none";
+      input.classList.add("error");
+      var errorCode = iti.getValidationError();
+      errorMsg.innerHTML = errorMap[errorCode];
+      errorMsg.classList.remove("hide");
     }
-  };
+  }
+});
 
-  input[i].addEventListener("blur", function () {
-    reset();
-    if (input[i].value.trim()) {
-      if (iti.isValidNumber()) {
-        validMsg.classList.remove("hide");
-        if (validSecondMsg) {
-          validSecondMsg.classList.remove("hide");
-        }
-        validMsg.style.display = "block";
-        if (validSecondMsg) {
-          validSecondMsg.style.display = "block";
-        }
-      } else {
-        validMsg.style.display = "none";
-        if (validSecondMsg) {
-          validSecondMsg.style.display = "none";
-        }
-        input[i].classList.add("error");
-        var errorCode = iti.getValidationError();
-        errorMsg.innerHTML = errorMap[errorCode];
-        errorMsg.classList.remove("hide");
-      }
-    }
-  });
-
-  input[i].addEventListener("change", reset);
-  input[i].addEventListener("keyup", reset);
-}
+input.addEventListener("change", reset);
+input.addEventListener("keyup", reset);
 
 $(function () {
+  $(".header__btn").on("click", function () {
+    if ($("#valid-msg").length) {
+      $("#valid-msg").css("display", "none");
+    }
+  });
+
   $(".navbar-collapse li a").on("click", function () {
     $(".navbar-collapse").collapse("hide");
   });
@@ -96,7 +87,7 @@ $(function () {
     $(".collection__inner").slick({
       arrows: true,
       dots: true,
-      infinite: true,
+      infinite: false,
       slidesToShow: 3,
       slidesToScroll: 1,
       prevArrow:
@@ -106,15 +97,23 @@ $(function () {
 
       responsive: [
         {
-          breakpoint: 641,
+          breakpoint: 993,
           settings: {
             slidesToShow: 2,
           },
         },
         {
-          breakpoint: 426,
+          breakpoint: 769,
+          settings: {
+            arrows: false,
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 641,
           settings: {
             slidesToShow: 1,
+            arrows: false,
           },
         },
       ],
@@ -155,10 +154,6 @@ $(function () {
       },
     });
   }
-
-  if ($(".contact__form-error").value.length === 0) {
-    $(".contact__form-error").style.display = "none";
-  }
 });
 
 new WOW().init();
@@ -174,7 +169,6 @@ setTimeout(function () {
       scale: 1.0,
       scaleMobile: 1.0,
       backgroundColor: "#ffffff",
-      // color1: "#f02171",
       color1: "#fe3e57",
       color2: "#192bd2",
       colorMode: "lerp",
