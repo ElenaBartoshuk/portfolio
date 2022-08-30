@@ -937,9 +937,14 @@ footer {
   height: 45px;
   border-radius: 5px;
   border: none;
+  outline: none;
   padding: 0 15px;
   font-size: 14px;
   box-shadow: 0 5px 7px 0 rgba(146, 146, 146, 0.5);
+}
+
+.form__input:focus {
+  border-bottom: 2px solid #2982ff;
 }
 
 .form__input::placeholder {
@@ -958,11 +963,12 @@ footer {
 .user {
   position: absolute;
   top: 17px;
-  left: 72px;
+  left: 13px;
 }
 
-.overlay {
-  display: none;
+.overlay,
+.projects-overlay {
+  /* display: none; */
   width: 100%;
   height: 100vh;
   background-color: #00000080;
@@ -970,28 +976,62 @@ footer {
   top: 0;
   left: 0;
   z-index: 100;
+  transition: all 0.5s;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.overlay__block {
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: all 0.5s;
+}
+
+.overlay__block,
+.projects-overlay__block {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.5s;
 }
 
-.overlay__popup {
+.no-scroll {
+  overflow-y: hidden;
+  /* overflow-x: hidden; */
+}
+
+.overlay__popup,
+.projects-overlay__popup {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   width: 420px;
   background-color: #f2f2f2;
   border: var(--border);
   border-radius: 5px;
   padding: 35px 0 40px;
   text-align: center;
+  transition: 0.5s all;
 }
 
-.overlay__close {
+.overlay__popup.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.5s all;
+}
+
+.projects-overlay__popup {
+  width: 90%;
+  padding: 5px;
+}
+
+/* .projects-overlay {
+  overflow-y: auto;
+  overflow-x: hidden;
+} */
+
+.overlay__close,
+.projects-overlay__close {
   position: absolute;
   right: -40px;
   top: 0;
@@ -999,13 +1039,20 @@ footer {
   box-shadow: 0px 7px 20px 0px rgb(255 17 48 / 30%);
 }
 
-.overlay__block,
-.overlay__thanks {
+.overlay__thanks,
+.projects-overlay__block {
   display: none;
 }
 
+/* .overlay__block,
+.overlay__thanks,
+.projects-overlay__block {
+  display: none;
+} */
+
 .overlay__title,
-.thanks__title {
+.thanks__title,
+.projects-overlay__title {
   color: var(--accent-color);
   font-size: 18px;
   font-weight: 700;
@@ -1017,11 +1064,21 @@ footer {
   display: inline-block;
 }
 
+.projects-overlay__title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .overlay__subtitle {
   margin: 0 0 24px;
   font-size: 16px;
   font-weight: 500;
   padding: 0;
+}
+
+.projects-overlay__close {
+  right: -30px;
+  top: -10px;
 }
 
 .thanks__title {
@@ -1454,6 +1511,11 @@ footer {
     margin-top: 20px;
   }
 
+  .projects-overlay__close {
+    right: 0px;
+    top: -30px;
+  }
+
   .footer__top {
     padding-top: 30px;
   }
@@ -1540,5 +1602,9 @@ footer {
 
   #about__section {
     margin-bottom: 30px;
+  }
+
+  .projects-overlay__title {
+    font-size: 16px;
   }
 }
