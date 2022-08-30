@@ -548,7 +548,7 @@ header {
 }
 
 .collection__images {
-  /* min-height: 300px; */
+  min-height: 300px;
   width: 100%;
   object-fit: cover;
   border: 2px solid rgba(252, 252, 252, 0.2);
@@ -626,6 +626,10 @@ header {
 .collection .slick-active button {
   width: 14px;
   height: 14px;
+}
+
+.slick-current .slick-active {
+  max-width: 100%;
 }
 
 .slick-btn {
@@ -791,17 +795,6 @@ header {
 
 .contact__form-field:required:valid {
   border-color: #34a853;
-}
-
-.contact__form-error {
-  display: none;
-  color: #ea4335;
-  font-size: 16px;
-  margin-left: 5px;
-}
-
-.contact__form-field:invalid + .contact__form-error {
-  display: inline;
 }
 
 .contact__form-input {
@@ -1108,17 +1101,11 @@ footer {
     box-shadow: none;
     padding: 0;
   }
-
-  .contact__form-btn {
-    margin: 70px auto;
-  }
-
-  .contact__form-box {
+  .contact__form-input {
     display: block;
   }
-
-  .contact__form-box input {
-    width: 100%;
+  .contact__form-btn {
+    margin: 70px auto;
   }
 
   .contact__info-item::before {
@@ -1127,24 +1114,17 @@ footer {
   .contact__info-item::after {
     top: 3px;
   }
-  .iti {
-    display: block;
+  .contact__form-box input {
+    width: 464px;
   }
 }
 
 @media (max-width: 992px) {
-  .collection {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding-bottom: 20px;
-    align-items: center;
-  }
-
-  .collection__item {
+  /* .collection__item {
     width: 50%;
     margin: 0 auto;
     object-fit: contain;
-  }
+  } */
 
   .nav-item {
     width: 100%;
@@ -1218,6 +1198,19 @@ footer {
 
   .projects__images {
     width: 100%;
+  }
+  .overlay {
+    display: none;
+  }
+  .contact__form-box {
+    display: block;
+  }
+
+  .contact__form-box input {
+    width: 100%;
+  }
+  .iti {
+    display: block;
   }
 }
 
@@ -1297,6 +1290,18 @@ footer {
 
   .contact__form-label {
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slick-next .slick-arrow img,
+  .slick-prev .slick-arrow img {
+    display: none;
+  }
+
+  .collection__inner {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -1424,6 +1429,10 @@ footer {
 
   .projects__link--img {
     padding: 0;
+  }
+
+  .collection .slick-dots {
+    margin-top: 20px;
   }
 
   .footer__top {
