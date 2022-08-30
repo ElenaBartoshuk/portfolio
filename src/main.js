@@ -120,21 +120,24 @@ $(function () {
     });
   }
 
-  $(".header__btn").on("click", function (params) {
-    $(".overlay, .overlay__block").fadeIn(1000);
-  });
+  // $(".header__btn").on("click", function (e) {
+  //   e.preventDefault;
+  //   $(".overlay, .overlay__block").fadeIn(800);
+  //   $("html").addClass("no-scroll");
+  // });
 
-  $(".overlay__close").on("click", function (params) {
-    $(".overlay, .overlay__block, .overlay__thanks").fadeOut(1000);
-  });
+  // $(".overlay__close").on("click", function (params) {
+  //   $(".overlay, .overlay__block, .overlay__thanks").fadeOut(800);
+  //   $("html").removeClass("no-scroll");
+  // });
 
-  $(".projects__link--weather").on("click", function (params) {
-    $(".projects-overlay, .projects-overlay__block").fadeIn(1500);
-  });
+  // $(".projects__link--weather").on("click", function (params) {
+  //   $(".projects-overlay, .projects-overlay__block").fadeIn(1000);
+  // });
 
-  $(".projects-overlay__close").on("click", function (params) {
-    $(".projects-overlay, .projects-overlay__block").fadeOut(1500);
-  });
+  // $(".projects-overlay__close").on("click", function (params) {
+  //   $(".projects-overlay, .projects-overlay__block").fadeOut(1000);
+  // });
 
   $(".link-projects, .link-certificates, .link-body, .go-top").on(
     "click",
@@ -198,51 +201,35 @@ setTimeout(function () {
 
 // var newNo = intlNumber.replace(countryCode, "(" + coountryCode+ ")" ); // final version
 
-// var iti = window.intlTelInput(input, {
-//   initialCountry: "auto",
-//   geoIpLookup: function (success, failure) {
-//     $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
-//       var countryCode = resp && resp.country ? resp.country : "";
-//       success(countryCode);
-//     });
-//   },
-//   utilsScript: "src/utils.js",
-// });
+// popup
 
-// var reset = function () {
-//   input.classList.remove("error");
-//   errorMsg.innerHTML = "";
-//   errorMsg.classList.add("hide");
-//   validMsg.classList.add("hide");
-//   if (validSecondMsg) {
-//     validSecondMsg.classList.add("hide");
-//   }
-// };
+let overlay = document.querySelector(".overlay");
+let popup = document.querySelector(".overlay__popup");
+let openPopupButtons = document.querySelectorAll(".popup__open");
+let closePopupButton = document.querySelector(".overlay__close");
 
-// input.addEventListener("blur", function () {
-//   reset();
-//   if (input.value.trim()) {
-//     if (iti.isValidNumber()) {
-//       validMsg.classList.remove("hide");
-//       if (validSecondMsg) {
-//         validSecondMsg.classList.remove("hide");
-//       }
-//       validMsg.style.display = "block";
-//       if (validSecondMsg) {
-//         validSecondMsg.style.display = "block";
-//       }
-//     } else {
-//       validMsg.style.display = "none";
-//       if (validSecondMsg) {
-//         validSecondMsg.style.display = "none";
-//       }
-//       input.classList.add("error");
-//       var errorCode = iti.getValidationError();
-//       errorMsg.innerHTML = errorMap[errorCode];
-//       errorMsg.classList.remove("hide");
-//     }
-//   }
-// });
+if (openPopupButtons.length > 0) {
+  openPopupButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      overlay.classList.add("active");
+      popup.classList.add("active");
+      // document.querySelector("html").addClass("no-scroll");
+      document.classList.add("no-scroll");
+    });
+  });
+}
 
-// input.addEventListener("change", reset);
-// input.addEventListener("keyup", reset);
+closePopupButton.addEventListener("click", () => {
+  overlay.classList.remove("active");
+  popup.classList.remove("active");
+  // document.querySelector("html").removeClass("no-scroll");
+  document.classList.remove("no-scroll");
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target === overlay) {
+    overlay.classList.remove("active");
+    popup.classList.remove("active");
+  }
+});

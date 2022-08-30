@@ -937,9 +937,14 @@ footer {
   height: 45px;
   border-radius: 5px;
   border: none;
+  outline: none;
   padding: 0 15px;
   font-size: 14px;
   box-shadow: 0 5px 7px 0 rgba(146, 146, 146, 0.5);
+}
+
+.form__input:focus {
+  border-bottom: 2px solid #2982ff;
 }
 
 .form__input::placeholder {
@@ -958,12 +963,12 @@ footer {
 .user {
   position: absolute;
   top: 17px;
-  left: 72px;
+  left: 13px;
 }
 
 .overlay,
 .projects-overlay {
-  display: none;
+  /* display: none; */
   width: 100%;
   height: 100vh;
   background-color: #00000080;
@@ -971,6 +976,15 @@ footer {
   top: 0;
   left: 0;
   z-index: 100;
+  transition: all 0.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: all 0.5s;
 }
 
 .overlay__block,
@@ -978,6 +992,12 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.5s;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+  /* overflow-x: hidden; */
 }
 
 .overlay__popup,
@@ -985,13 +1005,19 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   width: 420px;
   background-color: #f2f2f2;
   border: var(--border);
   border-radius: 5px;
   padding: 35px 0 40px;
   text-align: center;
+  transition: 0.5s all;
+}
+
+.overlay__popup.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.5s all;
 }
 
 .projects-overlay__popup {
@@ -999,10 +1025,10 @@ footer {
   padding: 5px;
 }
 
-.projects-overlay {
+/* .projects-overlay {
   overflow-y: auto;
   overflow-x: hidden;
-}
+} */
 
 .overlay__close,
 .projects-overlay__close {
@@ -1013,11 +1039,16 @@ footer {
   box-shadow: 0px 7px 20px 0px rgb(255 17 48 / 30%);
 }
 
-.overlay__block,
 .overlay__thanks,
 .projects-overlay__block {
   display: none;
 }
+
+/* .overlay__block,
+.overlay__thanks,
+.projects-overlay__block {
+  display: none;
+} */
 
 .overlay__title,
 .thanks__title,
