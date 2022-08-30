@@ -789,6 +789,10 @@ header {
   font-size: 16px !important;
 }
 
+.contact__form-field:required:valid {
+  border-color: #34a853;
+}
+
 .contact__form-error {
   display: none;
   color: #ea4335;
