@@ -267,11 +267,30 @@ header {
 .breadcrumbs__link {
   color: inherit;
   text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.breadcrumbs__link::before {
+  content: "";
+  width: 0;
+  left: auto;
+  right: 0;
+  position: absolute;
+  background-color: var(--accent-color);
+  height: 2px;
+  bottom: -2px;
+  transition: all 0.3s;
 }
 
 .breadcrumbs__link:hover {
-  text-decoration: underline;
   color: var(--accent-color);
+}
+
+.breadcrumbs__link:hover::before {
+  width: 100%;
+  right: auto;
+  left: 0;
 }
 
 #projects,
