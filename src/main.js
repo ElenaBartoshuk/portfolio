@@ -128,6 +128,14 @@ $(function () {
     $(".overlay, .overlay__block, .overlay__thanks").fadeOut(1000);
   });
 
+  $(".projects__link--weather").on("click", function (params) {
+    $(".projects-overlay, .projects-overlay__block").fadeIn(1500);
+  });
+
+  $(".projects-overlay__close").on("click", function (params) {
+    $(".projects-overlay, .projects-overlay__block").fadeOut(1500);
+  });
+
   $(".link-projects, .link-certificates, .link-body, .go-top").on(
     "click",
     function (event) {
@@ -157,6 +165,7 @@ $(function () {
 });
 
 new WOW().init();
+
 setTimeout(function () {
   if ($("#greeting").length) {
     VANTA.BIRDS({
