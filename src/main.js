@@ -1,6 +1,6 @@
 $(function () {
   $(".header__btn").on("click", function () {
-    if ($("#valid-msg").length) {
+    if ($("#valid-msg").length > 0) {
       $("#valid-msg").css("display", "none");
     }
   });
@@ -42,9 +42,11 @@ input.addEventListener("blur", function () {
     if (iti.isValidNumber()) {
       validMsg.classList.remove("hide");
       validMsg.style.display = "block";
+      input.style.border = "2px solid rgb(0, 196, 0)";
     } else {
       validMsg.style.display = "none";
       input.classList.add("error");
+      input.style.border = "2px solid rgb(255, 0, 0)";
       var errorCode = iti.getValidationError();
       errorMsg.innerHTML = errorMap[errorCode];
       errorMsg.classList.remove("hide");
@@ -56,12 +58,6 @@ input.addEventListener("change", reset);
 input.addEventListener("keyup", reset);
 
 $(function () {
-  $(".header__btn").on("click", function () {
-    if ($("#valid-msg").length) {
-      $("#valid-msg").css("display", "none");
-    }
-  });
-
   $(".navbar-collapse li a").on("click", function () {
     $(".navbar-collapse").collapse("hide");
   });
@@ -120,25 +116,6 @@ $(function () {
     });
   }
 
-  // $(".header__btn").on("click", function (e) {
-  //   e.preventDefault;
-  //   $(".overlay, .overlay__block").fadeIn(800);
-  //   $("html").addClass("no-scroll");
-  // });
-
-  // $(".overlay__close").on("click", function (params) {
-  //   $(".overlay, .overlay__block, .overlay__thanks").fadeOut(800);
-  //   $("html").removeClass("no-scroll");
-  // });
-
-  // $(".projects__link--weather").on("click", function (params) {
-  //   $(".projects-overlay, .projects-overlay__block").fadeIn(1000);
-  // });
-
-  // $(".projects-overlay__close").on("click", function (params) {
-  //   $(".projects-overlay, .projects-overlay__block").fadeOut(1000);
-  // });
-
   $(".link-projects, .link-certificates, .link-body, .go-top").on(
     "click",
     function (event) {
@@ -148,15 +125,6 @@ $(function () {
       $("body,html").animate({ scrollTop: top }, 200);
     }
   );
-
-  $(".callback__button").on("click", function (event) {
-    event.preventDefault();
-    $(".overlay, .overlay__block").fadeOut();
-    $(".overlay, .overlay__thanks").fadeIn(1000);
-    setTimeout(() => {
-      $(".overlay, .overlay__thanks").fadeOut(1000);
-    }, 4000);
-  });
 
   if ($(".gallery__inner").length) {
     var mixer = mixitup(".gallery__inner", {
@@ -170,7 +138,7 @@ $(function () {
 new WOW().init();
 
 setTimeout(function () {
-  if ($("#greeting").length) {
+  if ($("#greeting").length > 0) {
     VANTA.BIRDS({
       el: "#greeting",
       mouseControls: true,
@@ -202,34 +170,159 @@ setTimeout(function () {
 // var newNo = intlNumber.replace(countryCode, "(" + coountryCode+ ")" ); // final version
 
 // popup
-
 let overlay = document.querySelector(".overlay");
 let popup = document.querySelector(".overlay__popup");
 let openPopupButtons = document.querySelectorAll(".popup__open");
 let closePopupButton = document.querySelector(".overlay__close");
 
-if (openPopupButtons.length > 0) {
-  openPopupButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      overlay.classList.add("active");
-      popup.classList.add("active");
-      // document.querySelector("html").addClass("no-scroll");
-      document.classList.add("no-scroll");
+if (overlay) {
+  if (openPopupButtons.length > 0) {
+    openPopupButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        overlay.classList.add("active");
+        popup.classList.add("active");
+        document.querySelector("html").classList.add("no-scroll");
+      });
     });
-  });
-}
+  }
 
-closePopupButton.addEventListener("click", () => {
-  overlay.classList.remove("active");
-  popup.classList.remove("active");
-  // document.querySelector("html").removeClass("no-scroll");
-  document.classList.remove("no-scroll");
-});
-
-document.addEventListener("click", (e) => {
-  if (e.target === overlay) {
+  closePopupButton.addEventListener("click", () => {
     overlay.classList.remove("active");
     popup.classList.remove("active");
+    document.querySelector("html").classList.remove("no-scroll");
+  });
+
+  // по полю вокруг
+  document.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove("active");
+      popup.classList.remove("active");
+      document.querySelector("html").classList.remove("no-scroll");
+    }
+  });
+}
+// document.body.addEventListener("click", (e) => {
+//   if (e.code === "Escape") {
+//     overlay.classList.remove("active");
+//     popup.classList.remove("active");
+//     document.querySelector("html").classList.remove("no-scroll");
+//   }
+// });
+
+$(function () {
+  $(".callback__button").on("click", function (event) {
+    event.preventDefault();
+    $(".overlay, .overlay__block").fadeOut(100);
+    $(".overlay, .overlay__thanks").fadeIn(1000);
+    setTimeout(() => {
+      $(".overlay, .overlay__thanks").fadeOut(1000);
+    }, 4000);
+    $("html").removeClass("no-scroll");
+  });
+});
+
+// Form
+let form = document.forms["form"];
+
+let formArr = Array.from(form);
+
+let validFormArr = [];
+let button = form.elements["button"];
+
+formArr.forEach((el) => {
+  if (el.hasAttribute("data-reg")) {
+    el.setAttribute("is-valid", "0");
+    validFormArr.push(el);
   }
 });
+
+form.addEventListener("input", inputHandler);
+button.addEventListener("click", buttonHandler);
+
+function inputHandler({ target }) {
+  if (target.hasAttribute("data-reg")) {
+    inputCheck(target);
+  }
+}
+
+function inputCheck(el) {
+  const inputValue = el.value;
+  const inputReg = el.getAttribute("data-reg");
+  const reg = new RegExp(inputReg);
+  if (reg.test(inputValue)) {
+    el.setAttribute("is-valid", "1");
+    el.style.border = "2px solid rgb(0, 196, 0)";
+  } else {
+    el.setAttribute("is-valid", "0");
+    el.style.border = "2px solid rgb(255, 0, 0)";
+  }
+}
+
+function buttonHandler(e) {
+  const allValid = [];
+  validFormArr.forEach((el) => {
+    allValid.push(el.getAttribute("is-valid"));
+  });
+  const isAllValid = allValid.reduce((acc, current) => {
+    return acc & current;
+  });
+
+  if (!Boolean(Number(isAllValid))) {
+    e.preventDefault();
+    alert("Please check all the required form fields");
+  }
+}
+
+// popup2
+// let projectsOverlay = document.querySelector(".projects-overlay");
+// let projectsPopup = document.querySelector(".projects-overlay__popup");
+// let openPopupBtns = document.querySelectorAll(".projects-popup__open");
+// let closePopupBtn = document.querySelector(".projects-overlay__close");
+
+// if (projectsOverlay) {
+//   if (openPopupBtns.length > 0) {
+//     openPopupBtns.forEach((button) => {
+//       button.addEventListener("click", (e) => {
+//         e.preventDefault();
+//         projectsOverlay.classList.add("active");
+//         projectsPopup.classList.add("active");
+//         document.querySelector("html").classList.add("no-scroll");
+//       });
+//     });
+//   }
+
+//   closePopupBtn.addEventListener("click", () => {
+//     projectsOverlay.classList.remove("active");
+//     projectsPopup.classList.remove("active");
+//     document.querySelector("html").classList.remove("no-scroll");
+//   });
+
+//   // по полю вокруг
+//   document.addEventListener("click", (e) => {
+//     if (e.target === overlay) {
+//       projectsOverlay.classList.remove("active");
+//       projectsPopup.classList.remove("active");
+//       document.querySelector("html").classList.remove("no-scroll");
+//     }
+//   });
+// }
+// на jquery
+// $(".header__btn").on("click", function (e) {
+//   e.preventDefault;
+//   $(".overlay, .overlay__block").fadeIn(800);
+//   $("html").addClass("no-scroll");
+// });
+
+// $(".overlay__close").on("click", function (params) {
+//   $(".overlay, .overlay__block, .overlay__thanks").fadeOut(800);
+//   $("html").removeClass("no-scroll");
+// });
+
+// $(".projects__link--weather").on("click", function (params) {
+//   $(".projects-overlay, .projects-overlay__block").fadeIn(1000);
+// });
+
+// $(".projects-overlay__close").on("click", function (params) {
+//   $(".projects-overlay, .projects-overlay__block").fadeOut(1000);
+// });
