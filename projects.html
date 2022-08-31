@@ -18,6 +18,7 @@
   <link href="src/slick.css" rel="stylesheet">
   <link rel="stylesheet" href="src/intlTelInput.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
   <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="src/styles.css" />
   <title>Elena Bartoshuk - Projects page</title>
@@ -86,15 +87,19 @@
                 live</a>
             </div>
           </div>
-          <a class="projects__link projects__link--img projects-popup__open" href="#">
+
+          <a class="projects__link projects__link--img" href="images/weather-app-screen.png" data-fancybox
+            data-src="images/weather-app-screen.png" data-caption="&lt;b&gt;Weather app screenshot&lt;/b&gt;">
             <img class="projects__images wow animate__animated animate__fadeInRight" data-wow-delay="0.5s"
               src="images/item2.png" alt="weather app" title="View weather app screenshot">
           </a>
         </div>
+
         <div class="projects__item reverse">
-          <a class="projects__link projects__link--img projects-popup__open" href="#">
+          <a class="projects__link projects__link--img" data-fancybox data-src="images/surf-landing-page-screen.png"
+            data-caption="&lt;b&gt;Surf landing page screenshot&lt;/b&gt;">
             <img class="projects__images wow animate__animated animate__fadeInLeft" data-wow-delay="0.5s"
-              src="images/item1.png" alt="surf landing page" title="View surf landing page screenshot">
+              src="images/item1.png" alt="Surf landing page" title="View surf landing page screenshot">
           </a>
           <div class="projects__info">
             <h6 class="projects__info-title">Surf landing page</h6>
@@ -123,7 +128,8 @@
                 live</a>
             </div>
           </div>
-          <a class="projects__link projects__link--img projects-popup__open" href="#">
+          <a class="projects__link projects__link--img" data-fancybox data-src="images/safari-landing-page-screen.png"
+            data-caption="&lt;b&gt;Safari landing page screenshot&lt;/b&gt;">
             <img class="projects__images wow animate__animated animate__fadeInRight" data-wow-delay="0.5s"
               src="images/item3.png" alt="safari landing page" title="View safari landing page screenshot">
           </a>
@@ -263,20 +269,6 @@
     </div>
   </div>
 
-  <div class="projects-overlay">
-    <div class="projects-overlay__popup">
-      <img class="projects-overlay__close" src="images/close.svg" alt="close icon">
-      <div class="projects-overlay__block">
-        <h3 class="projects-overlay__title"></h3>
-        <img src="images/weather-app-screen.png" alt="weather app screenshot">
-      </div>
-    </div>
-  </div>
-
-  <!-- title подставить,
-  alt подставить и img src подставить -->
-
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="src/mixitup.min.js"></script>
   <script src="src/jquery.magnific-popup.min.js"></script>
@@ -285,6 +277,7 @@
   <script src="src/vanta.birds.min.js"></script>
   <script src="src/intlTelInput.js"></script>
   <script src="src/wow.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
   <script src="src/main.js"></script>
 </body>
 
