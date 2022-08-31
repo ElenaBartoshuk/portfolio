@@ -79,6 +79,23 @@ $(function () {
     });
   }
 
+  if ($(".gallery__items").length) {
+    $(".gallery__items").each(function () {
+      $(this).magnificPopup({
+        delegate: "a",
+        type: "image",
+        tLoading: "Loading image #%curr%...",
+        mainClass: "mfp-img-mobile",
+        titleSrc: "title",
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1],
+        },
+      });
+    });
+  }
+
   if ($(".collection__inner").length) {
     $(".collection__inner").slick({
       arrows: true,
@@ -275,39 +292,6 @@ if (form) {
   }
 }
 
-// popup2
-// let projectsOverlay = document.querySelector(".projects-overlay");
-// let projectsPopup = document.querySelector(".projects-overlay__popup");
-// let openPopupBtns = document.querySelectorAll(".projects-popup__open");
-// let closePopupBtn = document.querySelector(".projects-overlay__close");
-
-// if (projectsOverlay) {
-//   if (openPopupBtns.length > 0) {
-//     openPopupBtns.forEach((button) => {
-//       button.addEventListener("click", (e) => {
-//         e.preventDefault();
-//         projectsOverlay.classList.add("active");
-//         projectsPopup.classList.add("active");
-//         document.querySelector("html").classList.add("no-scroll");
-//       });
-//     });
-//   }
-
-//   closePopupBtn.addEventListener("click", () => {
-//     projectsOverlay.classList.remove("active");
-//     projectsPopup.classList.remove("active");
-//     document.querySelector("html").classList.remove("no-scroll");
-//   });
-
-//   // по полю вокруг
-//   document.addEventListener("click", (e) => {
-//     if (e.target === overlay) {
-//       projectsOverlay.classList.remove("active");
-//       projectsPopup.classList.remove("active");
-//       document.querySelector("html").classList.remove("no-scroll");
-//     }
-//   });
-// }
 // на jquery
 // $(".header__btn").on("click", function (e) {
 //   e.preventDefault;
