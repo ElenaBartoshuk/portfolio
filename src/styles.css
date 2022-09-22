@@ -325,14 +325,60 @@ header {
   font-size: 32px;
   font-weight: 700;
   color: var(--accent-color);
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .projects__info-text {
   color: var(--default-color);
-  padding: 10px 20px;
+  padding: 8px;
   font-size: 20px;
-  line-height: 28px;
+  margin: 10px;
+}
+
+.projects__info-item {
+  list-style: square;
+  text-align: left;
+  color: var(--default-color);
+}
+
+.rotating {
+  animation-name: rotating;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: rotating;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: rotating;
+  -moz-animation-duration: 10s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: rotating;
+  -ms-animation-duration: 10s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-animation-name: rotating;
+  -o-animation-duration: 10s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.projects__info-item img {
+  width: 30px;
+  height: 30px;
+  display: inline;
+  margin-left: 3px;
+  margin-right: 2px;
 }
 
 .projects__link {
@@ -341,7 +387,7 @@ header {
 }
 
 .projects__images {
-  width: 90%;
+  width: 95%;
   object-fit: cover;
   border: 2px solid rgba(252, 252, 252, 0.2);
   box-shadow: 0px 7px 20px 0px rgb(141 141 141 / 50%);
@@ -355,16 +401,26 @@ header {
 .projects__links {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
+}
+
+.projects__link--img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .projects__images:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .projects__btn {
   margin: 15px;
   width: 175px;
+  transition: all 0.5s;
+}
+.projects__btn:hover {
+  transform: scale(1.08);
 }
 
 .projects__btn--live {
@@ -444,14 +500,11 @@ header {
   border-radius: 5px;
   border: 5px solid #fff;
   box-shadow: 2px 7px 20px 0px rgb(141 141 141 / 50%);
-}
-
-.certificates__images {
   transition: all 0.5s;
 }
 
-.certificates__images:hover {
-  transform: scale(1.1);
+.gallery__images:hover {
+  transform: scale(1.09);
 }
 
 .gallery__add,
@@ -658,6 +711,7 @@ header {
   top: 42%;
   transform: translateY(-42%);
   cursor: pointer;
+  transition: all 0.5s;
 }
 
 .slick-btn img {
